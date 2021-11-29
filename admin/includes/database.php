@@ -28,12 +28,12 @@ class Database
     {
         $result = $this->connection->query($sql);
 
-        $this->confrim_query($result);
+        $this->confirm_query($result);
 
         return $result;
     }
 
-    private function confrim_query()
+    private function confirm_query($result)
     {
         if (!$result)
         {
