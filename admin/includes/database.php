@@ -21,12 +21,22 @@ class Database
     {
         $result = mysqli_query($this->connection, $sql);
 
+        return $result;
+    }
+
+    private function confrim_query()
+    {
         if (!$result)
         {
             die("Query Failed");
         }
+    }
 
-        return $result;
+    public function escape_string($string)
+    {
+        $escaped_string = mysqli_escape_string($this->connection, $string);
+
+        return $escaped_string;
     }
 
 
