@@ -38,7 +38,7 @@ class User
         return $result_set;
     }
 
-    private static function instatiation()
+    public static function instatiation($found_user)
     {
         $the_object = new self;
 
