@@ -10,4 +10,16 @@ class User
 
         return $result_set;
     }
+
+    public static function find_user_by_id($id)
+    {
+        global $database;
+
+        $result = $database->query("SELECT * FROM users WHERE id = $id LIMIT 1");
+
+        $found_user = mysqli_fetch_array($result);
+
+        return $found_user;
+
+    }
 }
