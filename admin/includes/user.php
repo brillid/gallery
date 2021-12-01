@@ -35,7 +35,14 @@ class User
 
         $result_set = $database->query($sql);
 
-        return $result_set;
+        $the_object_array = array();
+
+        while ($row = mysqli_fetch_array($result_set))
+        {
+            $the_object_array[] = self::instatiation($row);
+        }
+
+        return $the_object_array;
     }
 
     public static function instatiation($the_record)
